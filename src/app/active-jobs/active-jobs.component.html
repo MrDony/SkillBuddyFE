@@ -1,0 +1,34 @@
+<div class="column color-pk txt-color-blk" style="height: 100%;">
+    <div class="row title">Active Jobs</div>
+    <div class="row" style="height: 85%;">
+        <div class="card" style="overflow: scroll; width: 100%;">
+            <div class="column list">
+
+                <div *ngFor="let job of activeJobs; let i =index;">
+
+                    <div class="column list-item">
+                        <div class="row mar-12">Job Title: {{job['title']}}</div>
+                        <div class="row mar-12"><div>Description:</div><div> {{job['description']}}</div></div>
+                        <div class="row mar-12"><div>Required Skills:</div> 
+                            <div *ngFor="let skill of job['requiredSkills']">
+                                <div class="tag">{{skill}}</div>
+                            </div>
+                        </div>
+                        <div class="row mar-12">Expected Completion Date: {{job['expectedFinishingTime']}}</div>
+                        <div class="row mar-12"><div>Worker(s):</div> 
+                            <div *ngFor="let worker of job['workers']">
+                                <div class="tag" (click)="openWorkerProfile(worker['id'])">{{worker['name']}}</div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <button class="button mar-12" style="background-color: var(--green);" (click)="markCompletedActiveJob(i)">Mark as completed</button>
+                            <button class="button mar-12" style="background-color: var(--red);" (click)="deleteActiveJob(i)">Delete</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

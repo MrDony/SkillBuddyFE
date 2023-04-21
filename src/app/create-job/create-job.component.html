@@ -1,0 +1,70 @@
+<div class="column color-pk txt-color-blk" style="height: 100%;">
+    <div class="row title">Create a New Job</div>
+    <div class="row">
+        <div class="card" style="height: 100%; width: 100%; " *ngIf="!postingJob">
+            <div class="subtitle p-0 m-0 font-size-30" >Add details of job</div>
+            <hr>
+            <div class="column">
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Title</div>
+                        <input type="text" class="target-input-field mar-12"  #title  placeholder="example: Office Flooring">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Description</div>
+                        <input type="text" class="target-input-field mar-12"  #description  placeholder="example: 1. Add pannels on floor size 32 sq ft.">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Required Skills</div>
+                        <div class="row" style="flex-wrap: wrap; width: 90%;">
+                            <div *ngFor="let skill of possibleSkills; let i=index">
+                                <div class="tag mar-12 tooltip" [ngStyle]="{'background-color':  selectedSkills.includes(skill['name']) ? 'var(--green)' : ''}" (click)="addSkill(skill['name'])">
+                                    {{skill['name']}}
+                                    <span class="tooltiptext">{{skill['description']}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="text" class="target-input-field mar-12" style="width: 40%;"  #newSkill placeholder="Add a custom skill" >
+                        <button class="button txt-color-wht" (click)="addNewSkill(newSkill.value)">Add custom</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Minimum Budget</div>
+                        <input type="text" class="target-input-field mar-12"  #minBudget  placeholder="Minimum budget in PRK">
+                    </div>
+                    <div class="input-card">
+                        <div class="txt-color-blk">Maximum Budget</div>
+                        <input type="text" class="target-input-field mar-12"  #maxBudget  placeholder="Maximum budget in PKR">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Expected Completion Time</div>
+                        <div class="row">
+                            <input type="text" class="target-input-field mar-12"  #days placeholder="Days" >
+                            <input type="text" class="target-input-field mar-12"  #months placeholder="Months">
+                            <input type="text" class="target-input-field mar-12"  #years placeholder="Years">
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <button class="button txt-color-wht" *ngIf="!postingJob" (click)="createJob(title.value,description.value,minBudget.value,maxBudget.value,days.value,months.value,years.value)">Create New Job</button>
+                
+            </div>
+        </div>
+        <div *ngIf="postingJob" class="row just-cen" style="width: 100%;">
+            <div class="lds-dual-ring"><div class="text" style="text-align: center;">Your Job is being posted</div></div>
+            
+        </div>
+    </div>
+</div>

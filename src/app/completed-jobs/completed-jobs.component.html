@@ -1,0 +1,83 @@
+<div class="column color-pk txt-color-blk" style="height: 100%;">
+    <div class="row title">Completed Jobs</div>
+    <div class="row" style="height: 85%;">
+        <div class="card" style="overflow: scroll; width: 100%;">
+            <div class="column list">
+
+
+                <div *ngFor="let job of completedJobs; let i =index;">
+
+                    <div class="column list-item">
+                        <div class="row mar-12">Job Title: {{job['title']}}</div>
+                        <div class="row mar-12"><div>Description:</div><div> {{job['description']}}</div></div>
+                        <div class="row mar-12"><div>Required Skills:</div> 
+                            <div *ngFor="let skill of job['requiredSkills']">
+                                <div class="tag">{{skill}}</div>
+                            </div>
+                        </div>
+                        <div class="row mar-12">Starting Date: {{job['startingDate']}}    Ending Date:{{job['finishisngDate']}}</div>
+                        <div class="row mar-12"><div>Worker(s):</div> 
+                            <div *ngFor="let worker of job['workers']">
+                                <div class="tag" (click)="openWorkerProfile(worker['id'])">{{worker['name']}}</div>
+                            </div>
+                        </div>
+                        <div class="row mar-12"><div>Review: </div>
+                            <div>{{job['review']}}</div>
+                        </div>
+                    </div>
+
+                </div>
+<!--
+                <div class="column list-item">
+                    <div class="row mar-12">Job Title: /Job Title/</div>
+                    <div class="row mar-12"><div>Description:</div><div> Descritopns amdknsadnoasndas djas do saojd jkas d oas dojas od aso dsa jd ajs djsa djsa dkjsa kd askd ask d</div></div>
+                    <div class="row mar-12"><div>Required Skills:</div> 
+                        <div class="row tags-list"> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> </div> 
+                    </div>
+                    <div class="row mar-12">Starting Date: /Date/         Ending Date: /Date/</div>
+                    <div class="row mar-12"><div>Worker(s):</div> 
+                        <div class="row tags-list"> <div class="tag">worker1</div> <div class="tag">worker2</div>  </div> 
+                    </div>
+                </div>
+
+                <div class="column list-item">
+                    <div class="row mar-12">Job Title: /Job Title/</div>
+                    <div class="row mar-12"><div>Description:</div><div> Descritopns amdknsadnoasndas djas do saojd jkas d oas dojas od aso dsa jd ajs djsa djsa dkjsa kd askd ask d</div></div>
+                    <div class="row mar-12"><div>Required Skills:</div> 
+                        <div class="row tags-list"> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> </div> 
+                    </div>
+                    <div class="row mar-12">Starting Date: /Date/         Ending Date: /Date/</div>
+                    <div class="row mar-12"><div>Worker(s):</div> 
+                        <div class="row tags-list"> <div class="tag">worker1</div> <div class="tag">worker2</div>  </div> 
+                    </div>
+                </div>
+
+                <div class="column list-item">
+                    <div class="row mar-12">Job Title: /Job Title/</div>
+                    <div class="row mar-12"><div>Description:</div><div> Descritopns amdknsadnoasndas djas donndnasdn ndsandnsaodknsadnasdnoasndoasndk nksnadlknsalkd nlsnadln aslndlkn sal dnalsnd lsna saojd jkas d oas dojas od aso dsa jd ajs djsa djsa dkjsa kd askd ask d</div></div>
+                    <div class="row mar-12"><div>Required Skills:</div> 
+                        <div class="row tags-list"> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> </div> 
+                    </div>
+                    <div class="row mar-12">Starting Date: /Date/         Ending Date: /Date/</div>
+                    <div class="row mar-12"><div>Worker(s):</div> 
+                        <div class="row tags-list"> <div class="tag">worker1</div> <div class="tag">worker2</div>  </div> 
+                    </div>
+                </div>
+
+                <div class="column list-item">
+                    <div class="row mar-12">Job Title: /Job Title/</div>
+                    <div class="row mar-12"><div>Description:</div><div> Descritopns amdknsadnoasndas djas do saojd jkas d oas dojas od aso dsa jd ajs djsa djsa dkjsa kd askd ask d</div></div>
+                    <div class="row mar-12"><div>Required Skills:</div> 
+                        <div class="row tags-list"> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> <div class="tag">tag1</div> </div> 
+                    </div>
+                    <div class="row mar-12">Starting Date: /Date/         Ending Date: /Date/</div>
+                    <div class="row mar-12"><div>Worker(s):</div> 
+                        <div class="row tags-list"> <div class="tag">worker1</div> <div class="tag">worker2</div>  </div> 
+                    </div>
+                </div>
+-->
+            </div>
+        </div>
+        
+    </div>
+</div>

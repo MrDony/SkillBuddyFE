@@ -1,0 +1,64 @@
+<div class="column color-pk txt-color-blk" style="height: 100%;">
+    <div class="row title">My Profile</div>
+    <div class="row">
+        <div class="card" style="height: max-content; width: 100%;">
+            <div class="subtitle p-0 m-0 font-size-70" >My Details</div>
+            <hr>
+            <div class="column mar-12 font-size-25">  
+                <div>Name</div><div class="subtitle">{{profileDetails['name']}}</div> 
+                
+            </div>
+            <div class="column mar-12 font-size-25">  
+                <div>Email</div><div class="subtitle">{{profileDetails['email']}}</div>
+                <div class="row" *ngIf="profileDetails['email'].length==0">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Please provide an email.</div>
+                        <input type="text" class="target-input-field mar-12"  #email  placeholder="myemail@email.com">
+                        <div class="column mar-12 font-size-25">  
+                            <button class="button txt-color-wht" (click)="addEmail(email.value)">Add Phone</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column mar-12 font-size-25"> 
+                <div>Phone Number</div><div class="subtitle">{{profileDetails['phone']}}</div>  
+                <div class="row" *ngIf="profileDetails['phone'].length==0">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Please provide an phone.</div>
+                        <input type="text" class="target-input-field mar-12"  #phone  placeholder="No spaces, no hyphens.">
+                        <div class="column mar-12 font-size-25">  
+                            <button class="button txt-color-wht" (click)="addPhoneNumber(phone.value)">Add Phone</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="card" style="height: 350px; width: 100%;">
+            <div class="row" style="justify-content: space-between;"> <div class="subtitle p-0 m-0 font-size-70" >My Jobs</div> <div><button class="button txt-color-wht" routerLink="../create-job">Create New Job</button></div> </div>
+            <div class="row" style="justify-content: space-evenly;">
+                <div class="card jobs-card" style="background-color: var(--tertiary-color);">
+                    <div class="row just-cen">Active Jobs Count</div>
+                    <div class="row just-cen mar-12"><div class="value-holder" style="background-color: var(--aqua);">
+                        {{jobDetails['active']}}
+                    </div></div>
+                </div> 
+                <div class="card jobs-card" style="background-color: var(--tertiary-color);">
+                    <div class="row just-cen">Pending Jobs Count</div>
+                    <div class="row just-cen mar-12"><div class="value-holder" style="background-color: var(--yellow);">
+                        {{jobDetails['pending']}}
+                    </div></div>
+                </div> 
+                <div class="card jobs-card" style="background-color: var(--tertiary-color);">
+                    <div class="row just-cen">Completed Jobs Count</div>
+                    <div class="row just-cen mar-12"><div class="value-holder" style="background-color: var(--green);">
+                        {{jobDetails['completed']}}
+                    </div></div>
+                </div> 
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="column color-pk txt-color-blk" style="height: 100%;">
+    <div class="row title">Pending Jobs</div>
+    <div class="row" style="height: 85%;">
+        <div class="card" style="overflow: scroll; width: 100%;">
+            <div class="column list">
+
+
+                <div *ngFor="let job of pendingJobs; let i =index;">
+                    <div class="column list-item">
+                        <div class="row mar-12">Job Title: {{job['title']}}</div>
+                        <div class="row mar-12"><div>Description:</div><div> {{job['description']}}</div></div>
+                        <div class="row mar-12"><div>Required Skills:</div> 
+                            <div *ngFor="let skill of job['requiredSkills']">
+                                <div class="tag">{{skill}}</div>
+                            </div>
+                        </div>
+                        <div class="row mar-12">Posted Date: {{job['postedDate']}}</div>
+                        <div class="column">
+                            <button class="button mar-12" style="background-color: var(--green);" (click)="viewApplicantsOfPendingJobAtIndex(i)">View Applicants</button>
+                            <button class="button mar-12" style="background-color: var(--red);" (click)="removePendingJobAtIndex(i)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        
+    </div>
+</div>

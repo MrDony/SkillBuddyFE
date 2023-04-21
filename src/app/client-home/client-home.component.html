@@ -1,0 +1,39 @@
+<div class="column color-pk txt-color-blk" style="height: 100%;" *ngIf="profileDetails!=null && jobDetails!=null">
+    <div class="row title">Home</div>
+    <div class="row">
+        <div class="card" style="height: max-content; width: 100%;">
+            <div class="subtitle p-0 m-0 font-size-70" >Welcome to Skill Buddy</div>
+            <hr>
+            <div class="mar-12 text">{{welcomeText}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card" style="height: 512px; width: 100%;">
+            <div class="row" style="justify-content: space-between;"> <div class="subtitle p-0 m-0 font-size-70" >My Jobs Overview</div> <div><button class="button txt-color-wht" routerLink="../create-job">Create New Job</button></div> </div>
+            <div class="row" style="justify-content: space-evenly;">
+                <div class="card jobs-card" style="background-color: var(--tertiary-color);">
+                    <div class="row just-cen">Active Jobs Count</div>
+                    <div class="row just-cen"><div class="value-holder" style="background-color: var(--aqua);">
+                        {{jobDetails['active']}}
+                    </div></div>
+                    <div class="row just-cen"><button class="button" routerLink="../active-jobs" (click)="activateTab(ACTIVE_JOBS)">View</button></div>
+                </div> 
+                <div class="card jobs-card" style="background-color: var(--tertiary-color);">
+                    <div class="row just-cen">Pending Jobs Count</div>
+                    <div class="row just-cen"><div class="value-holder" style="background-color: var(--yellow);">
+                        {{jobDetails['pending']}}
+                    </div></div>
+                    <div class="row just-cen"><button class="button" routerLink="../pending-jobs" (click)="activateTab(PENDING_JOBS)">View</button></div>
+                </div> 
+                <div class="card jobs-card" style="background-color: var(--tertiary-color);">
+                    <div class="row just-cen">Completed Jobs Count</div>
+                    <div class="row just-cen"><div class="value-holder" style="background-color: var(--green);">
+                        {{jobDetails['completed']}}
+                    </div></div>
+                    <div class="row just-cen"><button class="button" routerLink="../completed-jobs" (click)="activateTab(COMPLETED_JOBS)">View</button></div>
+                </div> 
+            </div>
+        </div>
+        
+    </div>
+</div>

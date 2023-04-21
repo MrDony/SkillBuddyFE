@@ -1,0 +1,8 @@
+.value-holder{
+    margin:50px;
+}
+.jobs-card{
+    height: 300px;
+    width: 300px;
+    color: var(--white);
+}

@@ -1,0 +1,56 @@
+<div class="column color-sec" style="height: 100%; width: 270px; padding:12px;">
+    <div class="row" style="font-size: 30px;">
+        SKILL BUDDY
+    </div>
+    <hr>
+    <div class="row mar-8" (click)="activateTab(HOME)" routerLink="home">
+        <div class="column">
+            <button class="button">
+                Home
+                <hr *ngIf="getActiveTab()==HOME">
+            </button>
+           
+        </div>
+    </div>
+    <div class="row mar-8" (click)="activateTab(MY_PROFILE)" routerLink="my-profile">
+        <div class="column">
+            <button class="button">
+                My Profile
+                <hr *ngIf="getActiveTab()==MY_PROFILE">
+            </button>
+            
+        </div>
+    </div>
+    <div class="column mar-8">
+        <div class="column" (click)="activateTab(MY_JOBS)" routerLink="active-jobs">
+            <button class="button">
+                My Jobs
+                <hr *ngIf="getActiveTab()>=MY_JOBS && getActiveTab()<=COMPLETED_JOBS">
+            </button>
+            
+        </div>
+        <div class="jobs-list mar-12" *ngIf="getActiveTab()>=MY_JOBS && getActiveTab()<=COMPLETED_JOBS">
+            <div class="mar-8" (click)="activateTab(ACTIVE_JOBS)" routerLink="active-jobs">
+                <button class="button">
+                    Active Jobs
+                    <hr *ngIf="getActiveTab()==ACTIVE_JOBS">
+                </button>
+                
+            </div>
+            <div class="mar-8" (click)="activateTab(PENDING_JOBS)" routerLink="pending-jobs">
+                <button class="button">
+                    Pending Jobs
+                    <hr *ngIf="getActiveTab()==PENDING_JOBS">
+                </button>
+                
+            </div>
+            <div class="mar-8" (click)="activateTab(COMPLETED_JOBS)" routerLink="completed-jobs">
+                <button class="button">
+                    Completed Jobs
+                    <hr *ngIf="getActiveTab()==COMPLETED_JOBS">
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+
+<div class="Login-Signup-body outer-middle" *ngIf="currentTab==SIGN_IN">
+    <div class="middle">
+        <div class="row" style="width: 1400px; height: 830px;">
+            <div class="column color-sec pad-12 animate-stretch-in" style="width: 50%; border-top-left-radius: 50px; border-bottom-left-radius: 50px;">
+                <div class="row title">
+                    Welcome to Skill Buddy
+                </div>
+                <div class="row text">
+                    Find the correct skilled worker for your need. Easily posts jobs and connect with thousands of workers near you immediately! 
+                </div>
+            </div>
+            <div class="column color-ter pad-12 animate-stretch-in" style="width: 50%; border-top-right-radius: 50px; border-bottom-right-radius: 50px;">
+                <div class="row title">
+                    Sign In
+                </div>
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Email</div>
+                        <input type="text" class="target-input-field"   #signInEmail name="website">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Password</div>
+                        <input type="password" class="target-input-field"   #signInPassword name="website">
+                    </div>
+                </div>
+                <div class="row pad-12 mar-12"  style="justify-content: center;">
+	                <button class="button" (click)="signInUser(signInEmail.value,signInPassword.value)">Sign In</button>
+                </div>
+                <div class="column pad-12 mar-12">
+                    <div class="row" style="justify-content: center;">
+                        <div>Forgot your password?</div><p>Recover Account</p>
+                    </div>
+                    <div class="row" style="justify-content: center;">
+                        <div>Don't have an account?</div><p (click)="currentTab=SIGN_UP">Sign Up</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<div class="Login-Signup-body outer-middle" *ngIf="currentTab==SIGN_UP">
+    <div class="middle">
+        <div class="row" style="width: 1400px; height: 830px;">
+            <div class="column color-ter pad-12 animate-stretch-in" style="width: 50%; border-top-left-radius: 50px; border-bottom-left-radius: 50px;">
+                <div class="row title">
+                    Sign Up
+                </div>
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Name</div>
+                        <input type="text" class="target-input-field"   #signUpName name="website">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Email</div>
+                        <input type="text" class="target-input-field"   #signUpEmail name="website">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-card">
+                        <div class="txt-color-blk">Password</div>
+                        <input type="password" class="target-input-field"   #signUpPassword name="website">
+                    </div>
+                </div>
+                <div class="row pad-12 mar-12"  style="justify-content: center;">
+	                <button class="button" (click)="signUpUser(signUpName.value,signUpEmail.value,signUpPassword.value)">Sign In</button>
+                </div>
+                <div class="column pad-12 mar-12">
+                    <div class="row" style="justify-content: center;">
+                        <div>Already have an account?</div><p (click)="currentTab=SIGN_IN">Sign In</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column color-sec pad-12 animate-stretch-in" style="width: 50%; border-top-right-radius: 50px; border-bottom-right-radius: 50px;">
+                <div class="row title">
+                    Welcome to Skill Buddy
+                </div>
+                <div class="row text">
+                    Find the correct skilled worker for your need. Easily posts jobs and connect with thousands of workers near you immediately! 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
